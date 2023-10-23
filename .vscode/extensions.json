@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"bierner.markdown-preview-github-styles",
+		"bmewburn.vscode-intelephense-client",
+		"DavidAnson.vscode-markdownlint",
+		"Gruntfuggly.todo-tree",
+		"eamodio.gitlens",
+		"streetsidesoftware.code-spell-checker",
+		"valeryanm.vscode-phpsab"
+	]
+}

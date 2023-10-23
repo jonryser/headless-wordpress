@@ -1,0 +1,4 @@
+*.code-workspace
+!etcms.code-workspace
+cache/*
+upgrade-temp-backup/*

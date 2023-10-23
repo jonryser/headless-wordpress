@@ -1,0 +1,30 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "afrobeat",
+        "autogenerate",
+        "datetime",
+        "dockerized",
+		"dnsfetch",
+        "graphiql",
+        "guid",
+        "guids",
+        "healthcheck",
+        "imei",
+        "jsonb",
+        "metacharacter",
+        "mkdir",
+        "nextjs",
+        "postgres",
+        "queryable",
+        "referer",
+        "repo",
+        "rssi",
+        "unprocessable",
+        "upsert",
+        "varchar",
+        "zipcode"
+    ],
+    "flagWords": []
+}
