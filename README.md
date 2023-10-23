@@ -1,5 +1,11 @@
 # Headless Wordpress
 
+This is a headless Wordpress starter repo.
+This will not generate a fronend.
+You will need to create a separate frontend application.
+The frontend will use the GraphQL endpoints to query from the headless Wordpress.
+A Nextjs starter frontend that works with this is <https://github.com/jonryser/nextjs-for-headless-wordpress>.
+
 ## Requirements
 
 - [php](https://www.php.net/manual/en/install.php) - Needed locally for linting
@@ -24,11 +30,6 @@ They both do the same thing; they will open the Wordpress admin console in the b
 
 Authenticate and enter the console.
 Use the "GraphiQL IDE" to test queries.
-
-## Frontent
-
-The frontend will use the GraphQL endpoints to query from the headless Wordpress.
-A Nextjs starter frontend that works with this is <https://github.com/jonryser/nextjs-for-headless-wordpress>.
 
 ### Linting
 
