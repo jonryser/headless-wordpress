@@ -7,6 +7,7 @@ on:
 jobs:
   info:
     name: Gather info for jobs
+    # Gathering info should never take longer than 1 minute
     timeout-minutes: 1
     runs-on: ubuntu-latest
     outputs:
@@ -22,13 +23,13 @@ jobs:
           echo "::group::Branch"
           echo 'branch: '${branch}
           echo "::endgroup::"
+        shell: bash
         id: target_branch
 
       - name: Get environment
         run: |
           env=dev
-          if [ "${{ steps.target_branch.outputs.name }}" = "main" ]
-          then
+          if [[ "${{ steps.target_branch.outputs.name }}" == "main" ]]; then
             env=prod
           fi
           echo "name=${env}" >> $GITHUB_OUTPUT
@@ -36,6 +37,7 @@ jobs:
           echo "::group::Environment"
           echo 'environment: '${env}
           echo "::endgroup::"
+        shell: bash
         id: environment
 
       - name: Checkout code
@@ -55,9 +57,11 @@ jobs:
           echo "::group::Changes"
           echo 'Changed?: '${{ steps.changed_theme.outputs.any_changed }}
           echo "::endgroup::"
+        shell: bash
 
   test:
     name: Lint and test
+    # Linting and Testing should never take longer than 15 minutes
     timeout-minutes: 15
     runs-on: ubuntu-latest
     needs: [info]
@@ -82,4 +86,5 @@ jobs:
           npm i -g github:10up/phpcs-json-to-md
           phpcs-json-to-md --path ./phpcs.json --output ./phpcs.md
           cat phpcs.md >> $GITHUB_STEP_SUMMARY
+        shell: bash
         if: always()
